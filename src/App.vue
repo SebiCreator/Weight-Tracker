@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <FirstChart :labels="this.weekdays" :datasets="this.datasetWeekly"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import FirstChart from './components/FirstChart';
+import MainDs from './components/Datasets.js'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    FirstChart
+  },
+  data(){
+    return {
+      weekdays : MainDs.labels,
+      datasetWeekly :  [{
+                label: 'Gewicht',
+                data: WeeklyDS.values
+            }]
+    }
   }
 }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
