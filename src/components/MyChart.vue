@@ -5,9 +5,8 @@ import axios from "axios"
 
 
 const res = await axios.get("http://127.0.0.1:8000")
-console.log(res.data.data)
 
-const weights = ref(res.data.data)
+const weights = ref(res.data.weightData)
 const weightChartEl = ref(null)
 const weightChart = shallowRef(null)
 
